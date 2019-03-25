@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom'
 
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import App from './App';
+import Todo from './containers/Todo/index'
+import ForLoop from './components/for-loop'
 
 ReactDOM.render(
     <HashRouter>
-        <Route path="/" component={App}/>
+        <Route exact path="/" component={App}/>
+        <Route exact path="/todo" component={Todo}/>
+        <Route exact path="/forLoop" component={ForLoop}/>
     </HashRouter>
     , document.getElementById('root'));
 

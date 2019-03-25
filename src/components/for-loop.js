@@ -42,11 +42,12 @@ class ForLoop extends React.Component {
     componentDidMount () {
         // 组件第一次加载时渲染完成的事件，一般在此获取网络数据
         console.log('==================componentDidMount')
+        console.log(this.props)
     }
-    shouldComponentUpdate () {
-        // 用于性能优化
-        console.log()
-    }
+    // shouldComponentUpdate () {
+    //     // 用于性能优化
+    //     console.log()
+    // }
     componentDidUpdate () {
         // 组件更新了之后触发的事件，一般用于清空并更新数据
         console.log('==================componentDidUpdate')
