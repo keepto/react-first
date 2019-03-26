@@ -14,7 +14,11 @@ class Todo extends React.Component {
         return (
             <div className="todo">
                 <Input submitFn={this.submitFn.bind(this)} />
-                <List list={this.state.todoList} delAction={this.delAction.bind(this)} />
+                <List list={this.state.todoList} delAction={this.delAction.bind(this)}>
+                    <h2>React.js 小书</h2>
+                    <div>开源、免费、专业、简单</div>
+                    订阅：<input />
+                </List>
             </div>
         )
     }

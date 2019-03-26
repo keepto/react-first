@@ -17,8 +17,13 @@ class Home extends React.Component {
                     pathname: 'forLoop',
                     params: {
                         name: 'aaa'
+                    },
+                    state: {
+                        state1: 111
                     }
-                }}>forLoop page</Link>
+                }}>forLoop page</Link><br />
+                <Link to='/list'>list page</Link> <br />
+                <Link to='/lifecycle'>lifecycle page</Link> <br />
             </div>
         )
     }

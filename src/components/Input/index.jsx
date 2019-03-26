@@ -7,6 +7,9 @@ class Input extends React.Component {
             value: ''
         }
     }
+    componentDidMount () {
+        this.input.focus()
+    }
     render () {
         return (
             <div>
@@ -16,6 +19,8 @@ class Input extends React.Component {
                     // 可以用bind方法绑定this值，也可以用箭头函数
                     onChange={(e) => this.handleChange(e)}
                     onKeyUp={this.handleKeyUp.bind(this)}
+                    // ref属性值是一个函数 （能不用 ref 就不用）
+                    ref={(input) => this.input = input}
                 />
             </div>
         )

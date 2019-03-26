@@ -10,11 +10,17 @@ class List extends React.Component {
                         return <li key={i.id} onClick={() => this.delAction(i.id)}>{ i.text }</li>
                     })
                 }
+                {
+                    this.props.children
+                }
             </ul>
         )
     }
     delAction (id) {
         this.props.delAction(id)
+    }
+    componentDidMount () {
+        console.log(this.props.children)
     }
     componentDidUpdate () {
         // 组件更新了之后触发的事件，一般用于清空并更新数据

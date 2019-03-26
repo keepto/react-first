@@ -3,12 +3,14 @@ import React from 'react';
 class ForLoop extends React.Component {
     constructor (props, context) {
         super(props, context)
+        console.log('==================construct')
         this.state = {
             title: '嘻嘻哈哈',
             list: [111, 222, 333]
         }
     }
     render () {
+        console.log('==================render')
         return (
             <div>
                 <ul>
