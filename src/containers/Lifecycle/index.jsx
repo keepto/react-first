@@ -26,7 +26,7 @@ class LifeCycle extends React.Component {
 
   componentWillUnmount () {
     console.group('==========componentWillUnmount')
-    clearInterval(this.state)
+    clearInterval(this.timer)
   }
 
   render () {

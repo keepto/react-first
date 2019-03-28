@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { delTodo } from '../../action'
 
-class List extends React.Component {
+import Forloop from '../for-loop'
+
+class List extends Component {
     render () {
-        let list = this.props.list
+        let list = this.props.todos
         return (
             <ul>
                 {
@@ -13,11 +17,15 @@ class List extends React.Component {
                 {
                     this.props.children
                 }
+                <Forloop />
             </ul>
         )
     }
     delAction (id) {
-        this.props.delAction(id)
+        console.log(this)
+        this.props.delHandler(id)
+        // this.props.dispatch(delTodo(id))
+        // this.props.delAction(id)
     }
     componentDidMount () {
         console.log(this.props.children)
@@ -28,4 +36,20 @@ class List extends React.Component {
     }
 }
 
-export default List
+const mapStateToProps =  (state) => {
+    console.log(state)
+    return {
+        todos: state.todos
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        delHandler: (id) => {
+            dispatch(delTodo(id))
+        }
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(List)

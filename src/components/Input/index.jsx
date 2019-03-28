@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addTodo } from '../../action'
 
 class Input extends React.Component {
     constructor (props, context) {
@@ -34,7 +36,8 @@ class Input extends React.Component {
     handleKeyUp (e) {
         const value = this.state.value
         if (e.keyCode === 13 && value.trim()) {
-            this.props.submitFn(value)
+            // this.props.submitFn(value)
+            this.props.dispatch(addTodo(value))
             this.setState({
                 value: ''
             })
@@ -42,4 +45,4 @@ class Input extends React.Component {
     }
 }
 
-export default Input
+export default connect()(Input)
